@@ -14,6 +14,10 @@ namespace ColonyMaster.Services
         private const double PageWidth = 595; // A4 72dpi approx 595x842
         private const double PageHeight = 842;
 
+        // ToString("C") uses CurrentCulture, which on a container without a configured
+        // locale falls back to the invariant culture (currency symbol "¤" instead of "$").
+        private static readonly CultureInfo CurrencyCulture = CultureInfo.GetCultureInfo("en-US");
+
         public async Task<byte[]> RenderInvoicePdfAsync(InvoiceDto invoice)
         {
             using var doc = new PdfDocument();
@@ -117,8 +121,8 @@ namespace ColonyMaster.Services
                 gfx.DrawRectangle(XPens.Black, tableX, y, tableWidth, 20);
                 gfx.DrawString(d.Description ?? string.Empty, fontRegular, XBrushes.Black, new XRect(tableX + 4, y + 4, descWidth - 8, 12), XStringFormats.TopLeft);
                 gfx.DrawString(d.Quantity.ToString(CultureInfo.InvariantCulture), fontRegular, XBrushes.Black, new XRect(tableX + descWidth + 4, y + 4, qtyWidth - 8, 12), XStringFormats.TopLeft);
-                gfx.DrawString(d.UnitPrice.ToString("C"), fontRegular, XBrushes.Black, new XRect(tableX + descWidth + qtyWidth + 4, y + 4, unitWidth - 8, 12), XStringFormats.TopLeft);
-                var lineTotal = (d.Quantity * d.UnitPrice).ToString("C");
+                gfx.DrawString(d.UnitPrice.ToString("C", CurrencyCulture), fontRegular, XBrushes.Black, new XRect(tableX + descWidth + qtyWidth + 4, y + 4, unitWidth - 8, 12), XStringFormats.TopLeft);
+                var lineTotal = (d.Quantity * d.UnitPrice).ToString("C", CurrencyCulture);
                 gfx.DrawString(lineTotal, fontRegular, XBrushes.Black, new XRect(tableX + descWidth + qtyWidth + unitWidth + 4, y + 4, totalWidth - 8, 12), XStringFormats.TopLeft);
                 y += 22;
             }
@@ -146,19 +150,19 @@ namespace ColonyMaster.Services
             decimal subtotal = totalAmount - taxes;
 
             gfx.DrawString("Subtotal:", fontRegular, XBrushes.Black, new XRect(totalsX, y, labelWidth, 12), XStringFormats.TopLeft);
-            gfx.DrawString(subtotal.ToString("C"), fontRegular, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
+            gfx.DrawString(subtotal.ToString("C", CurrencyCulture), fontRegular, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
             y += 16;
 
             gfx.DrawString("Taxes:", fontRegular, XBrushes.Black, new XRect(totalsX, y, labelWidth, 12), XStringFormats.TopLeft);
-            gfx.DrawString(taxes.ToString("C"), fontRegular, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
+            gfx.DrawString(taxes.ToString("C", CurrencyCulture), fontRegular, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
             y += 16;
 
             gfx.DrawString("Total:", fontBold, XBrushes.Black, new XRect(totalsX, y, labelWidth, 12), XStringFormats.TopLeft);
-            gfx.DrawString(totalAmount.ToString("C"), fontBold, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
+            gfx.DrawString(totalAmount.ToString("C", CurrencyCulture), fontBold, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
             y += 20;
 
             gfx.DrawString("Amount Paid:", fontRegular, XBrushes.Black, new XRect(totalsX, y, labelWidth, 12), XStringFormats.TopLeft);
-            gfx.DrawString(invoice.AmountPaid.ToString("C"), fontRegular, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
+            gfx.DrawString(invoice.AmountPaid.ToString("C", CurrencyCulture), fontRegular, XBrushes.Black, new XRect(valueX, y, totalWidth - 8, 12), XStringFormats.TopRight);
 
             // Footer
             gfx.DrawString("ColonyMaster - Generated PDF", fontRegular, XBrushes.Gray, new XRect(0, page.Height - margin, page.Width, 12), XStringFormats.Center);

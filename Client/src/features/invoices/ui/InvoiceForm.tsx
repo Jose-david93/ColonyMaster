@@ -157,11 +157,11 @@ export function InvoiceForm({
       return
     }
 
-    setValue('fromName', selectedClient.clientName)
-    setValue('fromAddress', selectedClient.address)
-    setValue('fromCity', selectedClient.city)
-    setValue('fromState', selectedClient.state)
-    setValue('fromPostalCode', selectedClient.postalCode)
+    setValue('soldName', selectedClient.clientName)
+    setValue('soldAddress', selectedClient.address)
+    setValue('soldCity', selectedClient.city)
+    setValue('soldState', selectedClient.state)
+    setValue('soldPostalCode', selectedClient.postalCode)
   }, [selectedClient, setValue])
 
   useEffect(() => {
