@@ -12,10 +12,9 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ColonyMaster/ColonyMaster.csproj", "ColonyMaster/"]
-RUN dotnet restore "./ColonyMaster/ColonyMaster.csproj"
+COPY ["ColonyMaster.csproj", "./"]
+RUN dotnet restore "./ColonyMaster.csproj"
 COPY . .
-WORKDIR "/src/ColonyMaster"
 RUN dotnet build "./ColonyMaster.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
