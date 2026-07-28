@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-ink: #1f2534;
+  --color-brand-steel: #4b5a73;
+  --color-brand-mist: #d6deea;
+  --color-brand-paper: #f7f9fc;
+  --color-brand-surface: #ffffff;
+  --color-brand-border: #c2ccda;
+  --shadow-brand-card: 0 18px 40px rgba(31, 37, 52, 0.12);
+}
+
+@layer components {
+  .cm-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .cm-header {
+    @apply border-b border-brand-border bg-brand-paper/90 backdrop-blur-sm;
+  }
+
+  .cm-page {
+    @apply min-h-screen bg-brand-paper text-brand-ink;
+  }
+
+  .cm-card {
+    @apply rounded-2xl border border-brand-border bg-brand-surface p-8 shadow-[var(--shadow-brand-card)];
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #1f2534;
+}

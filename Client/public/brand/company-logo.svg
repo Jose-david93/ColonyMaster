@@ -1,0 +1,18 @@
+<svg width="900" height="360" viewBox="0 0 900 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="brand-arch" d="M125 172C205 68 332 22 450 22C568 22 695 68 775 172" />
+  </defs>
+
+  <text fill="#1F2534" font-size="108" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-weight="700" letter-spacing="4">
+    <textPath href="#brand-arch" startOffset="50%" text-anchor="middle">COLONY MASTER</textPath>
+  </text>
+
+  <g transform="translate(450 200)">
+    <circle cx="0" cy="0" r="62" stroke="#4B5A73" stroke-width="10" />
+    <path d="M-52 16L52-16" stroke="#4B5A73" stroke-width="8" stroke-linecap="round" />
+    <path d="M-52 -16L52 16" stroke="#4B5A73" stroke-width="8" stroke-linecap="round" />
+    <text x="0" y="18" text-anchor="middle" fill="#1F2534" font-size="56" font-family="Georgia, serif" font-weight="700">CM</text>
+  </g>
+
+  <text x="450" y="330" text-anchor="middle" fill="#4B5A73" font-size="52" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-weight="700" letter-spacing="2">CARPET CLEAN, LLC</text>
+</svg>
