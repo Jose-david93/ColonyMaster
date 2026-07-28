@@ -5,7 +5,6 @@ export interface Client {
   city: string
   state: string
   postalCode: string
-  sin: string
   initialConsecutive: number
   nextConsecutive: number
   isActive: boolean
@@ -17,7 +16,6 @@ export interface ClientCreateInput {
   city: string
   state: string
   postalCode: string
-  sin: string
   initialConsecutive: number
   nextConsecutive: number
 }
@@ -29,7 +27,6 @@ export interface ClientUpdateInput {
   city: string
   state: string
   postalCode: string
-  sin: string
   isActive: boolean
 }
 
@@ -39,7 +36,6 @@ export interface ClientCreateDto {
   city: string | null
   state: string | null
   postalCode: string | null
-  sin: string | null
   initialConsecutive: number
   nextConsecutive: number
 }
@@ -51,7 +47,6 @@ export interface ClientUpdateDto {
   city: string | null
   state: string | null
   postalCode: string | null
-  sin: string | null
   isActive: boolean
 }
 
@@ -62,7 +57,6 @@ export interface ClientApiPayload {
   city?: string | null
   state?: string | null
   postalCode?: string | null
-  sin?: string | null
   initialConsecutive?: number | null
   nextConsecutive?: number | null
   isActive?: boolean | null

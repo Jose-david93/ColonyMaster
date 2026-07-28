@@ -69,8 +69,8 @@ namespace ColonyMaster.Controllers
             }).ToList() ?? new List<InvoiceDetail>();
 
             invoice.UpdateInvoice(dto.Date,
-                dto.FromName, dto.FromAddress, dto.FromCity, dto.FromState, dto.FromPostalCode, dto.FromSIN,
-                dto.SoldName, dto.SoldAddress, dto.SoldCity, dto.SoldState, dto.SoldPostalCode, dto.SoldSIN,
+                dto.FromName, dto.FromAddress, dto.FromCity, dto.FromState, dto.FromPostalCode,
+                dto.SoldName, dto.SoldAddress, dto.SoldCity, dto.SoldState, dto.SoldPostalCode,
                 dto.PaymentMethod, dto.Total, dto.Taxes, dto.AmountPaid, dto.Notes,
                 details);
 
@@ -97,8 +97,8 @@ namespace ColonyMaster.Controllers
             }).ToList() ?? new List<InvoiceDetail>();
 
             existing.UpdateInvoice(dto.Date,
-                dto.FromName, dto.FromAddress, dto.FromCity, dto.FromState, dto.FromPostalCode, dto.FromSIN,
-                dto.SoldName, dto.SoldAddress, dto.SoldCity, dto.SoldState, dto.SoldPostalCode, dto.SoldSIN,
+                dto.FromName, dto.FromAddress, dto.FromCity, dto.FromState, dto.FromPostalCode,
+                dto.SoldName, dto.SoldAddress, dto.SoldCity, dto.SoldState, dto.SoldPostalCode,
                 dto.PaymentMethod, dto.Total, dto.Taxes, dto.AmountPaid, dto.Notes,
                 incomingDetails);
 
@@ -120,13 +120,11 @@ namespace ColonyMaster.Controllers
                 FromCity = i.FromCity,
                 FromState = i.FromState,
                 FromPostalCode = i.FromPostalCode,
-                FromSIN = i.FromSIN,
                 SoldName = i.SoldName,
                 SoldAddress = i.SoldAddress,
                 SoldCity = i.SoldCity,
                 SoldState = i.SoldState,
                 SoldPostalCode = i.SoldPostalCode,
-                SoldSIN = i.SoldSIN,
                 PaymentMethod = i.PaymentMethod,
                 Total = i.Total,
                 Taxes = i.Taxes,

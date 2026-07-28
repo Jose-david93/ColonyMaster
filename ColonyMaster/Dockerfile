@@ -2,6 +2,11 @@
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
+# PdfSharpCore needs real font files on Linux (Arial is a Windows-only font);
+# fonts-liberation provides metric-compatible substitutes and registers fontconfig aliases for Arial.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends fontconfig fonts-liberation \
+    && rm -rf /var/lib/apt/lists/*
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080

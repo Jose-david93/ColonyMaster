@@ -21,8 +21,6 @@ namespace ColonyMaster.Entities
 
         public string? PostalCode { get; private set; }
 
-        public string? SIN { get; private set; }
-
         public int NextConsecutive { get; private set; }
 
         public int InitialConsecutive { get; private set; }
@@ -54,14 +52,6 @@ namespace ColonyMaster.Entities
             City = city;
             State = state;
             PostalCode = postalCode;
-        }
-
-        /// <summary>
-        /// Update client identifiers such as SIN.
-        /// </summary>
-        public void UpdateIdentifiers(string? sin)
-        {
-            SIN = sin;
         }
 
         /// <summary>

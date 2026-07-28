@@ -23,13 +23,11 @@ export interface Invoice {
   fromCity: string
   fromState: string
   fromPostalCode: string
-  fromSIN: string
   soldName: string
   soldAddress: string
   soldCity: string
   soldState: string
   soldPostalCode: string
-  soldSIN: string
   details: InvoiceDetail[]
 }
 
@@ -55,13 +53,11 @@ export interface InvoiceCreateInput {
   fromCity: string
   fromState: string
   fromPostalCode: string
-  fromSIN: string
   soldName: string
   soldAddress: string
   soldCity: string
   soldState: string
   soldPostalCode: string
-  soldSIN: string
   paymentMethod: string
   total: number
   taxes: number
@@ -78,13 +74,11 @@ export interface InvoiceUpdateInput {
   fromCity: string
   fromState: string
   fromPostalCode: string
-  fromSIN: string
   soldName: string
   soldAddress: string
   soldCity: string
   soldState: string
   soldPostalCode: string
-  soldSIN: string
   paymentMethod: string
   total: number
   taxes: number
@@ -108,13 +102,11 @@ export interface InvoiceCreateDto {
   fromCity: string | null
   fromState: string | null
   fromPostalCode: string | null
-  fromSIN: string | null
   soldName: string | null
   soldAddress: string | null
   soldCity: string | null
   soldState: string | null
   soldPostalCode: string | null
-  soldSIN: string | null
   paymentMethod: string | null
   total: number
   taxes: number
@@ -131,13 +123,11 @@ export interface InvoiceUpdateDto {
   fromCity: string | null
   fromState: string | null
   fromPostalCode: string | null
-  fromSIN: string | null
   soldName: string | null
   soldAddress: string | null
   soldCity: string | null
   soldState: string | null
   soldPostalCode: string | null
-  soldSIN: string | null
   paymentMethod: string | null
   total: number
   taxes: number
@@ -173,13 +163,11 @@ export interface InvoiceApiPayload {
   fromCity?: string | null
   fromState?: string | null
   fromPostalCode?: string | null
-  fromSIN?: string | null
   soldName?: string | null
   soldAddress?: string | null
   soldCity?: string | null
   soldState?: string | null
   soldPostalCode?: string | null
-  soldSIN?: string | null
   details?: InvoiceDetailApiPayload[] | null
 }
 

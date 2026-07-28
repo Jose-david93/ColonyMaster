@@ -81,15 +81,13 @@ namespace ColonyMaster.Services
             gfx.DrawString(invoice.FromName ?? string.Empty, fontRegular, XBrushes.Black, new XRect(leftX, y + 16, colWidth, 16), XStringFormats.TopLeft);
             gfx.DrawString(invoice.FromAddress ?? string.Empty, fontRegular, XBrushes.Black, new XRect(leftX, y + 32, colWidth, 16), XStringFormats.TopLeft);
             gfx.DrawString((invoice.FromCity ?? string.Empty) + ", " + (invoice.FromState ?? string.Empty) + " " + (invoice.FromPostalCode ?? string.Empty), fontRegular, XBrushes.Black, new XRect(leftX, y + 48, colWidth, 16), XStringFormats.TopLeft);
-            gfx.DrawString("SIN: " + (invoice.FromSIN ?? string.Empty), fontRegular, XBrushes.Black, new XRect(leftX, y + 64, colWidth, 16), XStringFormats.TopLeft);
 
             gfx.DrawString("Sold To:", fontBold, XBrushes.Black, new XRect(rightX, y, colWidth, 16), XStringFormats.TopLeft);
             gfx.DrawString(invoice.ClientName ?? string.Empty, fontRegular, XBrushes.Black, new XRect(rightX, y + 16, colWidth, 16), XStringFormats.TopLeft);
             gfx.DrawString(invoice.SoldAddress ?? string.Empty, fontRegular, XBrushes.Black, new XRect(rightX, y + 32, colWidth, 16), XStringFormats.TopLeft);
             gfx.DrawString((invoice.SoldCity ?? string.Empty) + ", " + (invoice.SoldState ?? string.Empty) + " " + (invoice.SoldPostalCode ?? string.Empty), fontRegular, XBrushes.Black, new XRect(rightX, y + 48, colWidth, 16), XStringFormats.TopLeft);
-            gfx.DrawString("SIN: " + (invoice.SoldSIN ?? string.Empty), fontRegular, XBrushes.Black, new XRect(rightX, y + 64, colWidth, 16), XStringFormats.TopLeft);
 
-            y += 110;
+            y += 94;
 
             // Table header
             double tableX = margin;

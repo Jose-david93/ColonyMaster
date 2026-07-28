@@ -21,7 +21,6 @@ function buildFormValues(initialValues?: Partial<ClientCreateSchema>): ClientCre
     city: initialValues?.city ?? '',
     state: initialValues?.state ?? '',
     postalCode: initialValues?.postalCode ?? '',
-    sin: initialValues?.sin ?? '',
     initialConsecutive: initialValues?.initialConsecutive ?? 0,
     nextConsecutive: initialValues?.nextConsecutive ?? 0,
     isActive: initialValues?.isActive ?? true,
@@ -73,10 +72,7 @@ export function ClientForm({
         <Input label="City" id="city" disabled={isSubmitting} error={errors.city?.message} {...register('city')} />
         <Input label="State" id="state" disabled={isSubmitting} error={errors.state?.message} {...register('state')} />
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Input label="Postal code" id="postalCode" disabled={isSubmitting} error={errors.postalCode?.message} {...register('postalCode')} />
-        <Input label="SIN" id="sin" disabled={isSubmitting} error={errors.sin?.message} {...register('sin')} />
-      </div>
+      <Input label="Postal code" id="postalCode" disabled={isSubmitting} error={errors.postalCode?.message} {...register('postalCode')} />
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Input

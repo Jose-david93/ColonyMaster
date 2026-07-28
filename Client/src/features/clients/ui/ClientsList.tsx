@@ -30,7 +30,6 @@ export function ClientsList({ clients, isLoading, onDetail, onEdit }: ClientsLis
               <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-steel">City</th>
               <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-steel">State</th>
               <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-steel">Postal code</th>
-              <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-steel">SIN</th>
               <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-steel">Actions</th>
             </tr>
           </thead>
@@ -41,7 +40,6 @@ export function ClientsList({ clients, isLoading, onDetail, onEdit }: ClientsLis
                 <td className="px-4 py-3 text-sm text-brand-ink">{client.city}</td>
                 <td className="px-4 py-3 text-sm text-brand-ink">{client.state}</td>
                 <td className="px-4 py-3 text-sm text-brand-ink">{client.postalCode}</td>
-                <td className="px-4 py-3 text-sm text-brand-ink">{client.sin}</td>
                 <td className="px-4 py-3 text-sm text-brand-ink">
                   <div className="flex items-center gap-2">
                     <button

@@ -11,7 +11,6 @@ namespace ColonyMaster.DTOs
         public string? City { get; init; }
         public string? State { get; init; }
         public string? PostalCode { get; init; }
-        public string? SIN { get; init; }
         public bool IsActive { get; init; }
     }
 }

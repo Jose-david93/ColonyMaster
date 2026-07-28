@@ -30,13 +30,11 @@ function buildFormValues(initialValues?: Partial<InvoiceCreateSchema>): InvoiceC
     fromCity: initialValues?.fromCity ?? '',
     fromState: initialValues?.fromState ?? '',
     fromPostalCode: initialValues?.fromPostalCode ?? '',
-    fromSIN: initialValues?.fromSIN ?? '',
     soldName: initialValues?.soldName ?? '',
     soldAddress: initialValues?.soldAddress ?? '',
     soldCity: initialValues?.soldCity ?? '',
     soldState: initialValues?.soldState ?? '',
     soldPostalCode: initialValues?.soldPostalCode ?? '',
-    soldSIN: initialValues?.soldSIN ?? '',
     paymentMethod: initialValues?.paymentMethod ?? 'Cash',
     total: initialValues?.total ?? 0,
     taxes: initialValues?.taxes ?? 0,
@@ -164,7 +162,6 @@ export function InvoiceForm({
     setValue('fromCity', selectedClient.city)
     setValue('fromState', selectedClient.state)
     setValue('fromPostalCode', selectedClient.postalCode)
-    setValue('fromSIN', selectedClient.sin)
   }, [selectedClient, setValue])
 
   useEffect(() => {
@@ -241,8 +238,6 @@ export function InvoiceForm({
         <Input label="From postal code" id="fromPostalCode" disabled={isSubmitting} error={errors.fromPostalCode?.message} {...register('fromPostalCode')} />
       </div>
 
-      <Input label="From SIN" id="fromSIN" disabled={isSubmitting} error={errors.fromSIN?.message} {...register('fromSIN')} />
-
       <div className="grid gap-4 sm:grid-cols-2">
         <Input label="Sold name" id="soldName" disabled={isSubmitting} error={errors.soldName?.message} {...register('soldName')} />
         <Input label="Sold address" id="soldAddress" disabled={isSubmitting} error={errors.soldAddress?.message} {...register('soldAddress')} />
@@ -253,8 +248,6 @@ export function InvoiceForm({
         <Input label="Sold state" id="soldState" disabled={isSubmitting} error={errors.soldState?.message} {...register('soldState')} />
         <Input label="Sold postal code" id="soldPostalCode" disabled={isSubmitting} error={errors.soldPostalCode?.message} {...register('soldPostalCode')} />
       </div>
-
-      <Input label="Sold SIN" id="soldSIN" disabled={isSubmitting} error={errors.soldSIN?.message} {...register('soldSIN')} />
 
       <div className="grid gap-4 sm:grid-cols-2">
         <Controller

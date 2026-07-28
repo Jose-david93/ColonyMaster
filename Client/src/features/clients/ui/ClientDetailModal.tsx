@@ -80,7 +80,6 @@ export function ClientDetailModal({
             <p><span className="font-semibold">City:</span> {client.city}</p>
             <p><span className="font-semibold">State:</span> {client.state}</p>
             <p><span className="font-semibold">Postal code:</span> {client.postalCode}</p>
-            <p><span className="font-semibold">SIN:</span> {client.sin}</p>
             <p><span className="font-semibold">Initial consecutive:</span> {client.initialConsecutive}</p>
             <p><span className="font-semibold">Next consecutive:</span> {client.nextConsecutive}</p>
           </div>

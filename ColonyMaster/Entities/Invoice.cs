@@ -29,14 +29,12 @@ namespace ColonyMaster.Entities
         public string? FromCity { get; private set; }
         public string? FromState { get; private set; }
         public string? FromPostalCode { get; private set; }
-        public string? FromSIN { get; private set; }
 
         public string? SoldName { get; private set; }
         public string? SoldAddress { get; private set; }
         public string? SoldCity { get; private set; }
         public string? SoldState { get; private set; }
         public string? SoldPostalCode { get; private set; }
-        public string? SoldSIN { get; private set; }
 
         public string? PaymentMethod { get; private set; }
 
@@ -73,27 +71,25 @@ namespace ColonyMaster.Entities
         /// <summary>
         /// Set the sender information for the invoice.
         /// </summary>
-        public void SetFromInfo(string? name, string? address, string? city, string? state, string? postalCode, string? sin)
+        public void SetFromInfo(string? name, string? address, string? city, string? state, string? postalCode)
         {
             FromName = name;
             FromAddress = address;
             FromCity = city;
             FromState = state;
             FromPostalCode = postalCode;
-            FromSIN = sin;
         }
 
         /// <summary>
         /// Set the buyer information for the invoice.
         /// </summary>
-        public void SetSoldInfo(string? name, string? address, string? city, string? state, string? postalCode, string? sin)
+        public void SetSoldInfo(string? name, string? address, string? city, string? state, string? postalCode)
         {
             SoldName = name;
             SoldAddress = address;
             SoldCity = city;
             SoldState = state;
             SoldPostalCode = postalCode;
-            SoldSIN = sin;
         }
 
         /// <summary>
@@ -139,14 +135,14 @@ namespace ColonyMaster.Entities
         /// by adding new lines, updating existing ones and removing absent ones.
         /// </summary>
         public void UpdateInvoice(DateTime date,
-            string? fromName, string? fromAddress, string? fromCity, string? fromState, string? fromPostalCode, string? fromSin,
-            string? soldName, string? soldAddress, string? soldCity, string? soldState, string? soldPostalCode, string? soldSin,
+            string? fromName, string? fromAddress, string? fromCity, string? fromState, string? fromPostalCode,
+            string? soldName, string? soldAddress, string? soldCity, string? soldState, string? soldPostalCode,
             string? paymentMethod, decimal total, decimal taxes, decimal amountPaid, string? notes,
             IEnumerable<InvoiceDetail> newDetails)
         {
             SetDate(date);
-            SetFromInfo(fromName, fromAddress, fromCity, fromState, fromPostalCode, fromSin);
-            SetSoldInfo(soldName, soldAddress, soldCity, soldState, soldPostalCode, soldSin);
+            SetFromInfo(fromName, fromAddress, fromCity, fromState, fromPostalCode);
+            SetSoldInfo(soldName, soldAddress, soldCity, soldState, soldPostalCode);
             SetPayment(total, taxes, amountPaid, paymentMethod, notes);
 
             var incoming = newDetails?.ToList() ?? new List<InvoiceDetail>();

@@ -16,13 +16,11 @@ export const invoiceCreateSchema = z.object({
   fromCity: z.string().trim().max(80, 'From city must be 80 characters or fewer.'),
   fromState: z.string().trim().max(40, 'From state must be 40 characters or fewer.'),
   fromPostalCode: z.string().trim().max(20, 'From postal code must be 20 characters or fewer.'),
-  fromSIN: z.string().trim().max(40, 'From SIN must be 40 characters or fewer.'),
   soldName: z.string().trim().max(120, 'Sold name must be 120 characters or fewer.'),
   soldAddress: z.string().trim().max(180, 'Sold address must be 180 characters or fewer.'),
   soldCity: z.string().trim().max(80, 'Sold city must be 80 characters or fewer.'),
   soldState: z.string().trim().max(40, 'Sold state must be 40 characters or fewer.'),
   soldPostalCode: z.string().trim().max(20, 'Sold postal code must be 20 characters or fewer.'),
-  soldSIN: z.string().trim().max(40, 'Sold SIN must be 40 characters or fewer.'),
   paymentMethod: z.enum(PAYMENT_METHOD_OPTIONS, {
     error: 'Payment method is required.',
   }),

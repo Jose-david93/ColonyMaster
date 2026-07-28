@@ -34,7 +34,6 @@ namespace ColonyMaster.Controllers
                 City = c.City,
                 State = c.State,
                 PostalCode = c.PostalCode,
-                SIN = c.SIN,
                 InitialConsecutive = c.InitialConsecutive,
                 NextConsecutive = c.NextConsecutive,
                 IsActive = c.IsActive
@@ -77,7 +76,6 @@ namespace ColonyMaster.Controllers
             };
 
             client.UpdateAddress(dto.Address, dto.City, dto.State, dto.PostalCode);
-            client.UpdateIdentifiers(dto.SIN);
             client.SetConsecutives(dto.InitialConsecutive, dto.NextConsecutive);
 
             var created = await _clientService.CreateAsync(client);
@@ -98,7 +96,6 @@ namespace ColonyMaster.Controllers
             // update domain
             existing.SetName(dto.ClientName);
             existing.UpdateAddress(dto.Address, dto.City, dto.State, dto.PostalCode);
-            existing.UpdateIdentifiers(dto.SIN);
 
             if (dto.IsActive && !existing.IsActive)
             {

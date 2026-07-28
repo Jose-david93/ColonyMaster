@@ -10,14 +10,12 @@ namespace ColonyMaster.DTOs
         public string? FromCity { get; init; }
         public string? FromState { get; init; }
         public string? FromPostalCode { get; init; }
-        public string? FromSIN { get; init; }
 
         public string? SoldName { get; init; }
         public string? SoldAddress { get; init; }
         public string? SoldCity { get; init; }
         public string? SoldState { get; init; }
         public string? SoldPostalCode { get; init; }
-        public string? SoldSIN { get; init; }
 
         public string? PaymentMethod { get; init; }
         public decimal Total { get; init; }

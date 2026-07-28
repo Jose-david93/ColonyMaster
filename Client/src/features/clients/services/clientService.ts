@@ -19,7 +19,6 @@ function toClient(raw: ClientApiPayload): Client {
     city: raw.city ?? '',
     state: raw.state ?? '',
     postalCode: raw.postalCode ?? '',
-    sin: raw.sin ?? '',
     initialConsecutive: raw.initialConsecutive ?? 0,
     nextConsecutive: raw.nextConsecutive ?? 0,
     isActive: raw.isActive ?? true,
@@ -38,7 +37,6 @@ function toClientCreateDto(input: ClientCreateInput): ClientCreateDto {
     city: toNullableString(input.city),
     state: toNullableString(input.state),
     postalCode: toNullableString(input.postalCode),
-    sin: toNullableString(input.sin),
     initialConsecutive: input.initialConsecutive,
     nextConsecutive: input.nextConsecutive,
   }
@@ -52,7 +50,6 @@ function toClientUpdateDto(input: ClientUpdateInput): ClientUpdateDto {
     city: toNullableString(input.city),
     state: toNullableString(input.state),
     postalCode: toNullableString(input.postalCode),
-    sin: toNullableString(input.sin),
     isActive: input.isActive,
   }
 }

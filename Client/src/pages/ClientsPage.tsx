@@ -61,7 +61,6 @@ export function ClientsPage(): ReactElement {
       city: value.city,
       state: value.state,
       postalCode: value.postalCode,
-      sin: value.sin,
       isActive: value.isActive,
     }, includeInactive)
 
@@ -131,7 +130,6 @@ export function ClientsPage(): ReactElement {
                     city: selectedClient.city,
                     state: selectedClient.state,
                     postalCode: selectedClient.postalCode,
-                    sin: selectedClient.sin,
                     initialConsecutive: selectedClient.initialConsecutive,
                     nextConsecutive: selectedClient.nextConsecutive,
                     isActive: selectedClient.isActive,
