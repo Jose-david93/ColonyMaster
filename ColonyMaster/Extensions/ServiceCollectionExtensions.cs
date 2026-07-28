@@ -76,7 +76,10 @@ namespace ColonyMaster.Extensions
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                options.AddPolicy("AllowAll", p => p
+                    .WithOrigins("https://colonymaster-production.up.railway.app")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
             });
 
             services.AddSwaggerGen();
